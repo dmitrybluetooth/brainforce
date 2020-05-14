@@ -38,10 +38,8 @@ function debug($data){
         {
             if ($row[2] !== 'Стоимость')
             {
-                $cost = str_replace(',', '.', $row[2]);
-
                 $sql = "INSERT INTO `pricelist` (`name`,`cost`,`cost_opt`,`storage_1`,`storage_2`,`country`) 
-                        VALUES ('$row[1]','$cost','$row[3]','$row[4]','$row[5]','$row[6]')";
+                        VALUES ('$row[1]','$row[2]','$row[3]','$row[4]','$row[5]','$row[6]')";
                 $query = mysqli_query($link, $sql) or die('Ошибка чтения записи: '.mysqli_error($link));
             }
         }
@@ -61,7 +59,7 @@ function debug($data){
     ?>
 
     <form action="" method="POST">
-        <input type="submit" name="excel_Reader" value="Парсить файл">
+        <input type="submit" name="excel_Reader" value="Парсить файл xls в БД">
     </form>
 
     <form action="" method="POST">
