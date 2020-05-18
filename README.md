@@ -1,2 +1,1 @@
-# brainforce
 Filter + AJAX
